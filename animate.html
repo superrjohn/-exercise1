@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<link href="./bootstrap5/css/bootstrap.rtl.css" rel="stylesheet"/>
+<script src="./bootstrap5/js/bootstrap.bundle.js"></script>
+<link rel='icon' href='img/1.jpg'>
+</head>
+<title>CSS選擇器</title>
+<style>
+*{margin:0;padding:0}
+	div{width:200px;height:200px;background:yellow;position:absolute;}
+	
+</style>
+<body>
+	<button class='btn1'>500</button>
+	<button class='btn2'>800</button>
+	<div><span>123</span></div>
+<script>
+	function animate(obj,target,callback){
+		clearInterval(obj.timer)
+	obj.timer=setInterval(function(){
+	if(target == obj.offsetLeft){
+		clearInterval(obj.timer)
+		if(callback){callback()}}
+	var step=(target-obj.offsetLeft)/10
+	step=step>0? Math.ceil(step):Math.floor(step);
+	
+	obj.style.left=obj.offsetLeft+step +'px';
+	  
+	},15)
+	}
+	
+	let btn1=document.querySelector('.btn1')
+	let btn2=document.querySelector('.btn2')
+	let div=document.querySelector('div')
+	
+	btn1.addEventListener('click',function(){
+	animate(div,500,function(){div.style.background='red'})
+	})
+	
+	btn2.addEventListener('click',function(){
+	animate(div,800)
+	})
+</script>
+</body>
+</html>

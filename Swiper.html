@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<link href="./bootstrap5/css/bootstrap.rtl.css" rel="stylesheet"/>
+<script src="./bootstrap5/js/bootstrap.bundle.js"></script>
+<link rel='icon' href='img/1.jpg'>
+<script src='animate.js'></script>
+<script src='js.js'></script>
+</head>
+<title>輪播圖</title>
+<style>
+*{margin:0;padding:0;}
+body{background:#acac9d}
+	.focus{width:500px;height:500px;margin:100px auto;position:relative;overflow:hidden}
+	.arrow-l{position:absolute;bottom:50%;text-decoration:none;display:none;z-index:1;}
+	.arrow-r{position:absolute;right:0;bottom:50%;text-decoration:none;display:none;z-index:1;}
+	.focus ul{width:410%;list-style-type:none;position:absolute;}
+	.focus ul li{float:left;}
+	.circle{position:absolute;bottom:10px;left:50%}
+	.circle li{float:left;width:10px;height:10px;margin:0 3px;list-style-type:none;
+	border:2px solid rgba(123,32,444,.5);border-radius:50%;cursor:pointer;}
+	.current{background:red}
+</style>
+<body>
+	<div class='focus'>
+	  <a href='JavaScript:;'class='arrow-l'>prev</a>
+	  <a href='JavaScript:;'class='arrow-r'>next</a>
+		 <ul >
+		   <li><a href='JavaScript:;'><img src='img/1.jpg' style='width:500px;height:500px;'></a></li>
+		   <li><a href='JavaScript:;'><img src='img/2.jpg' style='width:500px;height:500px;'></a></li>
+		   <li><a href='JavaScript:;'><img src='img/3.jpg' style='width:500px;height:500px;'></a></li>
+		   <li><a href='JavaScript:;'><img src='img/4.jpg' style='width:500px;height:500px;'></a></li>
+		 </ul>
+		 
+		 <ol class='circle'>
+		 
+		 </ol>
+	</div>
+<script>
+
+</script>
+</body>
+</html>

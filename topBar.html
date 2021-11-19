@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<link href="./bootstrap5/css/bootstrap.rtl.css" rel="stylesheet"/>
+<script src="./bootstrap5/js/bootstrap.bundle.js"></script>
+<link rel='icon' href='img/1.jpg'>
+<script src='animate.js'></script>
+</head>
+<title>topBar點中效果</title>
+<style>
+*{margin:0;padding:0;}
+	#c_nav{width:1300px;height:30px;line-height:30px;background:#aaaaaa;margin:5px auto;
+	text-align:center;}
+	ul{display:flex;}
+	li {flex-grow:1;list-style-type:none;z-index:9;}
+	li a{display:block}
+	.cloud{background:rgba(345,3,66,.3);width:158.5px;height:30px;
+	position:absolute;z-index:1;left:33px;}
+</style>
+<body>
+	<div id='c_nav' class='c-nav'>
+	  <span class='cloud'></span>
+	    <ul>
+			<li class='current'><a href='#'>首頁</a></li>
+			<li><a href='#'>師資</a></li>
+			<li><a href='#'>活動</a></li>
+			<li><a href='#'>文化</a></li>
+			<li><a href='#'>招聘</a></li>
+			<li><a href='#'>簡介</a></li>
+			<li><a href='#'>你好</a></li>
+			<li><a href='#'>我好</a></li>
+	</div>
+	
+<script>
+  let nav=document.querySelector('#c_nav');
+  let cloud=document.querySelector('.cloud');
+  let li=document.querySelector('ul').querySelectorAll('li');
+  let current=document.querySelector('.current');
+	current=current.offsetLeft;
+	
+	for(let i=0;i<li.length;i++){
+	
+	  li[i].addEventListener('mouseenter',function(){
+	  
+	  animate(cloud,this.offsetLeft)
+	  
+	  })
+	  
+	  li[i].addEventListener('mouseleave',function(){
+	  
+	  animate(cloud,current)
+	  })
+	  
+	  li[i].addEventListener('click',function(){
+		current=this.offsetLeft;
+	  })
+	  }
+</script>
+</body>
+</html>

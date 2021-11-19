@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<link href="./bootstrap5/css/bootstrap.rtl.css" rel="stylesheet"/>
+<script src="./bootstrap5/js/bootstrap.bundle.js"></script>
+</head>
+<title>JS下拉框</title>
+<style>
+   .sdmenu{width:150px;margin:0 auto;background:#fab;text-align:center;}
+   .menuSpan{display:block;}
+   .sdmenu div{ overflow:hidden;}
+   a{display:block;text-decoration:none;}
+  .collapsed{height:25px;}
+  .sdmenu div{transition:height 0.5s;}
+</style>
+<body>
+	<div id='my_menu' class='sdmenu'>
+	  <div >
+		<span class='menuSpan'>合作伙伴</span>
+		<a href='#'>111</a>
+		<a href='#'>111</a>
+		<a href='#'>111</a>
+		<a href='#'>111</a>
+	   </div >
+	   <div class='collapsed' >
+		<span class='menuSpan'>合作伙伴</span>
+		<a href='#'>222</a>
+		<a href='#'>222</a>
+		<a href='#'>222</a>
+		<a href='#'>222</a>
+	   </div>
+	   <div class='collapsed' >
+		<span class='menuSpan'>合作伙伴</span>
+		<a href='#'>333</a>
+		<a href='#'>333</a>
+		<a href='#'>333</a>
+		<a href='#'>333</a>
+	   </div class='collapsed'>
+	   <div class='collapsed' >
+		<span class='menuSpan'>合作伙伴</span>
+		<a href='#'>444</a>
+		<a href='#'>444</a>
+		<a href='#'>444</a>
+		<a href='#'>444</a>
+	   </div>
+	</div>
+<script>
+	window.onload=function(){
+	 var menuSpan=document.getElementsByClassName('menuSpan');
+	
+	 var openDiv=menuSpan[0].parentNode;
+	 for(var i=0;i<menuSpan.length;i++){
+		menuSpan[i].onclick=function(){
+		//返回指定节点的父节点
+		var parentDiv=this.parentNode;
+			var begin=parentDiv.offsetHeight;//動畫
+		
+		toggleClass(parentDiv,'collapsed')
+		
+			var end=parentDiv.offsetHeight;//動畫
+			//parentDiv.style.height= begin+'px';//動畫
+			
+				
+				
+		if(openDiv != parentDiv && !hasClass(openDiv,'collapsed')){
+		toggleClass(openDiv,'collapsed')
+		;}
+		//addClass(openDiv,'collapsed')}
+
+		openDiv=this.parentNode;
+		
+		}
+		}
+	function addClass(obj,cn){
+	if(!hasClass(obj,cn)){
+	obj.className +=' '+cn;}
+	}
+	function hasClass(obj,cn){
+	var reg=new RegExp('\\b'+cn+'\\b');
+	return reg.test(obj.className)
+	}
+	function removeClass(obj,cn){
+	var reg=new RegExp('\\b'+cn+'\\b');
+	obj.className = obj.className.replace(reg,'');
+	}
+	function toggleClass(obj,cn){
+	if(hasClass(obj,cn)){
+	removeClass(obj,cn)}
+	else{addClass(obj,cn)}}
+	
+	}
+</script>
+</body>
+</html>

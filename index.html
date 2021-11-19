@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<link href="C:\Users\user\Desktop\bootstrap-5.1.0-dist\css\bootstrap.rtl.css" rel="stylesheet"/>
+<script src="C:\Users\user\Desktop\bootstrap-5.1.0-dist\js\bootstrap.bundle.js"></script>
+<link rel='icon' href='img/1.jpg'>
+</head>
+<title>CSS選擇器</title>
+<style>
+*{margin:0;padding:0}
+	
+	
+</style>
+<body>
+	<div></div>
+<script>
+	console.log(location.search)
+	let params=location.search.substr(1);
+	let arr=params.split('=')
+	
+	let div=document.querySelector('div')
+	div.innerHTML=arr[1]+'你好';
+	
+</script>
+</body>
+</html>
